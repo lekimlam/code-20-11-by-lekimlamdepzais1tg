@@ -1,2423 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 </title>
-<style>
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --dark-color: #000;
-}
-
-body {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: var(--dark-color);
-  overflow: hidden;
-  perspective: 1000px;
-}
-.text {
-    z-index: 999;
-    position: absolute;
-    color: white;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-weight: bold;
-    animation:  pulseText 1.5s infinite alternate ease-in-out 3s;
-  }
-  
-  
-  @keyframes pulseText {
-    0% {
-      text-shadow: 0 0 5px #ffffff88, 0 0 10px #ffffff66, 0 0 15px #ffffff44;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-      text-shadow: 0 0 8px #ffffffaa, 0 0 15px #ffffff88, 0 0 20px #ffffff66;
-      transform: translate(-50%, -50%) scale(1.05);
-    }
-  }
-  
-  .wrapper {
-    height: 200px;
-    width: 300px;
-    background-color: #E66A80;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    z-index: 0;
-    margin: 20px auto;
-}
-
-.lid {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-right: 150px solid transparent;
-    border-bottom: 100px solid transparent;
-    border-left: 150px solid transparent;
-    transform-origin: top;
-    transition: transform 0.4s ease-in-out;
-}
-
-.lid.one {
-    border-top: 100px solid #F28DA8;
-    transform: rotateX(0deg);
-    z-index: 3;
-}
-
-.lid.two {
-    border-top: 100px solid #E66A80;
-    transform: rotateX(90deg);
-    z-index: 1;
-}
-
-.envelope {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-top: 100px solid transparent;
-    border-right: 150px solid #FFD3DA;
-    border-bottom: 100px solid #FFD3DA;
-    border-left: 150px solid #FFC0CB;
-    z-index: 3;
-}
-
-.letter {
-    position: absolute;
-    top: 0;
-    width: 80%;
-    height: 80%;
-    background-color: #FFF5F7;
-    border-radius: 15px;
-    z-index: 2;
-    transition: 0.5s;
-    transform: translateY(0);
-}
-
-.letter p {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 30px;
-    color: #D43F5E;
-    font-weight: bold;
-}
-
-.buttons {
-    margin-top: 20px;
-}
-
-button {
-    background-color: #D43F5E;
-    color: white;
-    font-size: 16px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 5px;
-}
-
-button:hover {
-    background-color: #B52E4C;
-}
-
-
-.open .lid.one {
-    transform: rotateX(90deg);
-    transition-delay: 0s;
-}
-
-.open .lid.two {
-    transform: rotateX(180deg);
-    transition-delay: 0.25s;
-}
-
-.open .letter {
-    transform: translateY(-50px);
-    transition-delay: 0.5s;
-}
-
-  
-.night {
-  position: fixed;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  filter: blur(0.1vmin);
-  background-image: radial-gradient(
-      ellipse at top,
-      transparent 0%,
-      var(--dark-color)
-    ),
-    radial-gradient(
-      ellipse at bottom,
-      var(--dark-color),
-      rgba(145, 233, 255, 0.2)
-    ),
-    repeating-linear-gradient(
-      220deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px
-    ),
-    repeating-linear-gradient(
-      189deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px
-    ),
-    repeating-linear-gradient(
-      148deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px
-    ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
-}
-
-.flowers {
-  position: relative;
-  transform: scale(0.9);
-}
-
-.flower {
-  position: absolute;
-  bottom: 10vmin;
-  transform-origin: bottom center;
-  z-index: 10;
-  --fl-speed: 0.8s;
-}
-.flower--1 {
-  -webkit-animation: moving-flower-1 4s linear infinite;
-  animation: moving-flower-1 4s linear infinite;
-}
-.flower--1 .flower__line {
-  height: 40vmin;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
-.flower--1 .flower__line__leaf--1 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 1.6s backwards;
-}
-.flower--1 .flower__line__leaf--2 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 1.4s backwards;
-}
-.flower--1 .flower__line__leaf--3 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 1.2s backwards;
-}
-.flower--1 .flower__line__leaf--4 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 1s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 1s backwards;
-}
-.flower--1 .flower__line__leaf--5 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.8s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 1.8s backwards;
-}
-.flower--1 .flower__line__leaf--6 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 2s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 2s backwards;
-}
-.flower--2 {
-  left: 50%;
-  transform: rotate(20deg);
-  -webkit-animation: moving-flower-2 4s linear infinite;
-  animation: moving-flower-2 4s linear infinite;
-}
-.flower--2 .flower__line {
-  height: 40vmin;
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-.flower--2 .flower__line__leaf--1 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.9s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 1.9s backwards;
-}
-.flower--2 .flower__line__leaf--2 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 1.7s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 1.7s backwards;
-}
-.flower--2 .flower__line__leaf--3 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.5s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 1.5s backwards;
-}
-.flower--2 .flower__line__leaf--4 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
-}
-.flower--3 {
-  left: 50%;
-  transform: rotate(-15deg);
-  -webkit-animation: moving-flower-3 4s linear infinite;
-  animation: moving-flower-3 4s linear infinite;
-}
-.flower--3 .flower__line {
-  -webkit-animation-delay: 0.9s;
-  animation-delay: 0.9s;
-}
-.flower--3 .flower__line__leaf--1 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 2.5s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 2.5s backwards;
-}
-.flower--3 .flower__line__leaf--2 {
-  -webkit-animation: blooming-leaf-right var(--fl-speed) 2.3s backwards;
-  animation: blooming-leaf-right var(--fl-speed) 2.3s backwards;
-}
-.flower--3 .flower__line__leaf--3 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 2.1s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 2.1s backwards;
-}
-.flower--3 .flower__line__leaf--4 {
-  -webkit-animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
-  animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
-}
-.flower__leafs {
-  position: relative;
-  -webkit-animation: blooming-flower 2s backwards;
-  animation: blooming-flower 2s backwards;
-}
-.flower__leafs--1 {
-  -webkit-animation-delay: 1.1s;
-  animation-delay: 1.1s;
-}
-.flower__leafs--2 {
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.flower__leafs--3 {
-  -webkit-animation-delay: 1.7s;
-  animation-delay: 1.7s;
-}
-.flower__leafs::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -100%);
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #e73030;
-  filter: blur(10vmin);
-}
-.flower__leaf {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #e73030;
-  background-image: linear-gradient(to top, #ec1010, #e73030);
-  transform-origin: bottom center;
-  opacity: 0.9;
-  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
-}
-.flower__leaf--1 {
-  transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
-}
-.flower__leaf--2 {
-  transform: translate(-50%, -4%) rotateX(40deg);
-}
-.flower__leaf--3 {
-  transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
-}
-.flower__leaf--4 {
-  width: 8vmin;
-  height: 8vmin;
-  transform-origin: bottom left;
-  border-radius: 4vmin 10vmin 4vmin 4vmin;
-  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, #ec1010, #e73030);
-  z-index: 1;
-  opacity: 0.8;
-}
-.flower__white-circle {
-  position: absolute;
-  left: -3.5vmin;
-  top: -3vmin;
-  width: 9vmin;
-  height: 4vmin;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.flower__white-circle::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  border-radius: inherit;
-  background-image: repeating-linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      112.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      112.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      22.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      22.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      157.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      67.5deg,
-      rgba(0, 0, 0, 0.03) 0px,
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
-}
-.flower__line {
-  height: 40vmin;
-  width: 1.5vmin;
-  background-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 0.2),
-      transparent,
-      rgba(255, 255, 255, 0.2)
-    ),
-    linear-gradient(to top, transparent 10%, #147a33, #38a559);
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  -webkit-animation: grow-flower-tree 4s backwards;
-  animation: grow-flower-tree 4s backwards;
-}
-.flower__line__leaf {
-  --w: 7vmin;
-  --h: calc(var(--w) + 2vmin);
-  position: absolute;
-  top: 20%;
-  left: 90%;
-  width: var(--w);
-  height: var(--h);
-  border-top-right-radius: var(--h);
-  border-bottom-left-radius: var(--h);
-  background-image: linear-gradient(to top, #147a33, #38a559);
-}
-.flower__line__leaf--1 {
-  transform: rotate(70deg) rotateY(30deg);
-}
-.flower__line__leaf--2 {
-  top: 45%;
-  transform: rotate(70deg) rotateY(30deg);
-}
-.flower__line__leaf--3,
-.flower__line__leaf--4,
-.flower__line__leaf--6 {
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: var(--h);
-  border-bottom-right-radius: var(--h);
-  left: -460%;
-  top: 12%;
-  transform: rotate(-70deg) rotateY(30deg);
-}
-.flower__line__leaf--4 {
-  top: 40%;
-}
-
-.flower__line__leaf--5 {
-  top: 0;
-  transform-origin: left;
-  transform: rotate(70deg) rotateY(30deg) scale(0.6);
-}
-.flower__line__leaf--6 {
-  top: -2%;
-  left: -450%;
-  transform-origin: right;
-  transform: rotate(-70deg) rotateY(30deg) scale(0.6);
-}
-.flower__light {
-  position: absolute;
-  bottom: 0vmin;
-  width: 1vmin;
-  height: 1vmin;
-  background-color: rgb(255, 251, 0);
-  border-radius: 50%;
-  filter: blur(0.2vmin);
-  -webkit-animation: light-ans 4s linear infinite backwards;
-  animation: light-ans 4s linear infinite backwards;
-}
-.flower__light:nth-child(odd) {
-  background-color: #23f0ff;
-}
-.flower__light--1 {
-  left: -2vmin;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-.flower__light--2 {
-  left: 3vmin;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-}
-.flower__light--3 {
-  left: -6vmin;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
-.flower__light--4 {
-  left: 6vmin;
-  -webkit-animation-delay: 0.9s;
-  animation-delay: 0.9s;
-}
-.flower__light--5 {
-  left: -1vmin;
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
-}
-.flower__light--6 {
-  left: -4vmin;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-.flower__light--7 {
-  left: 3vmin;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-.flower__light--8 {
-  left: -6vmin;
-  -webkit-animation-delay: 3.5s;
-  animation-delay: 3.5s;
-}
-.flower__grass {
-  --c: #159faa;
-  --line-w: 1.5vmin;
-  position: absolute;
-  bottom: 12vmin;
-  left: -7vmin;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  z-index: 20;
-  transform-origin: bottom center;
-  transform: rotate(-48deg) rotateY(40deg);
-}
-.flower__grass--1 {
-  -webkit-animation: moving-grass 2s linear infinite;
-  animation: moving-grass 2s linear infinite;
-}
-.flower__grass--2 {
-  left: 2vmin;
-  bottom: 10vmin;
-  transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
-  opacity: 0.8;
-  z-index: 0;
-  -webkit-animation: moving-grass--2 1.5s linear infinite;
-  animation: moving-grass--2 1.5s linear infinite;
-}
-.flower__grass--top {
-  width: 7vmin;
-  height: 10vmin;
-  border-top-right-radius: 100%;
-  border-right: var(--line-w) solid var(--c);
-  transform-origin: bottom center;
-  transform: rotate(-2deg);
-}
-.flower__grass--bottom {
-  margin-top: -2px;
-  width: var(--line-w);
-  height: 25vmin;
-  background-image: linear-gradient(to top, transparent, var(--c));
-}
-.flower__grass__leaf {
-  --size: 10vmin;
-  position: absolute;
-  width: calc(var(--size) * 2.1);
-  height: var(--size);
-  border-top-left-radius: var(--size);
-  border-top-right-radius: var(--size);
-  background-image: linear-gradient(
-    to top,
-    transparent,
-    transparent 30%,
-    var(--c)
-  );
-  z-index: 100;
-}
-.flower__grass__leaf--1 {
-  top: -6%;
-  left: 30%;
-  --size: 6vmin;
-  transform: rotate(-20deg);
-  -webkit-animation: growing-grass-ans--1 2s 2.6s backwards;
-  animation: growing-grass-ans--1 2s 2.6s backwards;
-}
-@-webkit-keyframes growing-grass-ans--1 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-20deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--1 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-20deg) scale(0);
-  }
-}
-.flower__grass__leaf--2 {
-  top: -5%;
-  left: -110%;
-  --size: 6vmin;
-  transform: rotate(10deg);
-  -webkit-animation: growing-grass-ans--2 2s 2.4s linear backwards;
-  animation: growing-grass-ans--2 2s 2.4s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--2 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--2 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-.flower__grass__leaf--3 {
-  top: 5%;
-  left: 60%;
-  --size: 8vmin;
-  transform: rotate(-18deg) rotateX(-20deg);
-  -webkit-animation: growing-grass-ans--3 2s 2.2s linear backwards;
-  animation: growing-grass-ans--3 2s 2.2s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--3 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-18deg) rotateX(-20deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--3 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-18deg) rotateX(-20deg) scale(0);
-  }
-}
-.flower__grass__leaf--4 {
-  top: 6%;
-  left: -135%;
-  --size: 8vmin;
-  transform: rotate(2deg);
-  -webkit-animation: growing-grass-ans--4 2s 2s linear backwards;
-  animation: growing-grass-ans--4 2s 2s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--4 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(2deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--4 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(2deg) scale(0);
-  }
-}
-.flower__grass__leaf--5 {
-  top: 20%;
-  left: 60%;
-  --size: 10vmin;
-  transform: rotate(-24deg) rotateX(-20deg);
-  -webkit-animation: growing-grass-ans--5 2s 1.8s linear backwards;
-  animation: growing-grass-ans--5 2s 1.8s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--5 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-24deg) rotateX(-20deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--5 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-24deg) rotateX(-20deg) scale(0);
-  }
-}
-.flower__grass__leaf--6 {
-  top: 22%;
-  left: -180%;
-  --size: 10vmin;
-  transform: rotate(10deg);
-  -webkit-animation: growing-grass-ans--6 2s 1.6s linear backwards;
-  animation: growing-grass-ans--6 2s 1.6s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--6 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--6 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-.flower__grass__leaf--7 {
-  top: 39%;
-  left: 70%;
-  --size: 10vmin;
-  transform: rotate(-10deg);
-  -webkit-animation: growing-grass-ans--7 2s 1.4s linear backwards;
-  animation: growing-grass-ans--7 2s 1.4s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--7 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-10deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--7 {
-  0% {
-    transform-origin: bottom left;
-    transform: rotate(-10deg) scale(0);
-  }
-}
-.flower__grass__leaf--8 {
-  top: 40%;
-  left: -215%;
-  --size: 11vmin;
-  transform: rotate(10deg);
-  -webkit-animation: growing-grass-ans--8 2s 1.2s linear backwards;
-  animation: growing-grass-ans--8 2s 1.2s linear backwards;
-}
-@-webkit-keyframes growing-grass-ans--8 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-@keyframes growing-grass-ans--8 {
-  0% {
-    transform-origin: bottom right;
-    transform: rotate(10deg) scale(0);
-  }
-}
-.flower__grass__overlay {
-  position: absolute;
-  top: -10%;
-  right: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: blur(1.5vmin);
-  z-index: 100;
-}
-.flower__g-long {
-  --w: 2vmin;
-  --h: 6vmin;
-  --c: #147a33;
-  position: absolute;
-  bottom: 10vmin;
-  left: -3vmin;
-  transform-origin: bottom center;
-  transform: rotate(-30deg) rotateY(-20deg);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  -webkit-animation: flower-g-long-ans 3s linear infinite;
-  animation: flower-g-long-ans 3s linear infinite;
-}
-@-webkit-keyframes flower-g-long-ans {
-  0%,
-  100% {
-    transform: rotate(-30deg) rotateY(-20deg);
-  }
-  50% {
-    transform: rotate(-32deg) rotateY(-20deg);
-  }
-}
-@keyframes flower-g-long-ans {
-  0%,
-  100% {
-    transform: rotate(-30deg) rotateY(-20deg);
-  }
-  50% {
-    transform: rotate(-32deg) rotateY(-20deg);
-  }
-}
-.flower__g-long__top {
-  top: calc(var(--h) * -1);
-  width: calc(var(--w) + 1vmin);
-  height: var(--h);
-  border-top-right-radius: 100%;
-  border-right: 0.7vmin solid var(--c);
-  transform: translate(-0.7vmin, 1vmin);
-}
-.flower__g-long__bottom {
-  width: var(--w);
-  height: 35vmin;
-  transform-origin: bottom center;
-  background-image: linear-gradient(to top, transparent 30%, var(--c));
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  -webkit-clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
-  clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
-}
-.flower__g-right {
-  position: absolute;
-  bottom: 6vmin;
-  left: -2vmin;
-  transform-origin: bottom left;
-  transform: rotate(20deg);
-}
-.flower__g-right .leaf {
-  width: 30vmin;
-  height: 40vmin;
-  border-top-left-radius: 100%;
-  border-left: 2vmin solid #147a33;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    var(--dark-color) 60%
-  );
-  -webkit-mask-image: linear-gradient(to top, transparent 30%, #147a33 60%);
-}
-.flower__g-right--1 {
-  -webkit-animation: flower-g-right-ans 2.5s linear infinite;
-  animation: flower-g-right-ans 2.5s linear infinite;
-}
-.flower__g-right--2 {
-  left: 5vmin;
-  transform: rotateY(-180deg);
-  -webkit-animation: flower-g-right-ans--2 3s linear infinite;
-  animation: flower-g-right-ans--2 3s linear infinite;
-}
-.flower__g-right--2 .leaf {
-  height: 75vmin;
-  filter: blur(0.3vmin);
-  opacity: 0.8;
-}
-@-webkit-keyframes flower-g-right-ans {
-  0%,
-  100% {
-    transform: rotate(20deg);
-  }
-  50% {
-    transform: rotate(24deg) rotateX(-20deg);
-  }
-}
-@keyframes flower-g-right-ans {
-  0%,
-  100% {
-    transform: rotate(20deg);
-  }
-  50% {
-    transform: rotate(24deg) rotateX(-20deg);
-  }
-}
-@-webkit-keyframes flower-g-right-ans--2 {
-  0%,
-  100% {
-    transform: rotateY(-180deg) rotate(0deg) rotateX(-20deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotate(6deg) rotateX(-20deg);
-  }
-}
-@keyframes flower-g-right-ans--2 {
-  0%,
-  100% {
-    transform: rotateY(-180deg) rotate(0deg) rotateX(-20deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotate(6deg) rotateX(-20deg);
-  }
-}
-.flower__g-front {
-  position: absolute;
-  bottom: 6vmin;
-  left: 2.5vmin;
-  z-index: 100;
-  transform-origin: bottom center;
-  transform: rotate(-28deg) rotateY(30deg) scale(1.04);
-  -webkit-animation: flower__g-front-ans 2s linear infinite;
-  animation: flower__g-front-ans 2s linear infinite;
-}
-@-webkit-keyframes flower__g-front-ans {
-  0%,
-  100% {
-    transform: rotate(-28deg) rotateY(30deg) scale(1.04);
-  }
-  50% {
-    transform: rotate(-35deg) rotateY(40deg) scale(1.04);
-  }
-}
-@keyframes flower__g-front-ans {
-  0%,
-  100% {
-    transform: rotate(-28deg) rotateY(30deg) scale(1.04);
-  }
-  50% {
-    transform: rotate(-35deg) rotateY(40deg) scale(1.04);
-  }
-}
-.flower__g-front__line {
-  width: 0.3vmin;
-  height: 20vmin;
-  background-image: linear-gradient(
-    to top,
-    transparent,
-    #079097,
-    transparent 100%
-  );
-  position: relative;
-}
-.flower__g-front__leaf-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: bottom left;
-  transform: rotate(10deg);
-}
-.flower__g-front__leaf-wrapper:nth-child(even) {
-  left: 0vmin;
-  transform: rotateY(-180deg) rotate(5deg);
-  -webkit-animation: flower__g-front__leaf-left-ans 1s ease-in backwards;
-  animation: flower__g-front__leaf-left-ans 1s ease-in backwards;
-}
-.flower__g-front__leaf-wrapper:nth-child(odd) {
-  -webkit-animation: flower__g-front__leaf-ans 1s ease-in backwards;
-  animation: flower__g-front__leaf-ans 1s ease-in backwards;
-}
-.flower__g-front__leaf-wrapper--1 {
-  top: -8vmin;
-  transform: scale(0.7);
-  -webkit-animation: flower__g-front__leaf-ans 1s 5.5s ease-in backwards !important;
-  animation: flower__g-front__leaf-ans 1s 5.5s ease-in backwards !important;
-}
-.flower__g-front__leaf-wrapper--2 {
-  top: -8vmin;
-  transform: rotateY(-180deg) scale(0.7) !important;
-  -webkit-animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
-  animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
-}
-.flower__g-front__leaf-wrapper--3 {
-  top: -3vmin;
-  -webkit-animation: flower__g-front__leaf-ans 1s 4.6s ease-in backwards;
-  animation: flower__g-front__leaf-ans 1s 4.6s ease-in backwards;
-}
-.flower__g-front__leaf-wrapper--4 {
-  top: -3vmin;
-  transform: rotateY(-180deg) scale(0.9) !important;
-  -webkit-animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
-  animation: flower__g-front__leaf-left-ans-2 1s 4.6s ease-in backwards !important;
-}
-@-webkit-keyframes flower__g-front__leaf-left-ans-2 {
-  0% {
-    transform: rotateY(-180deg) scale(0);
-  }
-}
-@keyframes flower__g-front__leaf-left-ans-2 {
-  0% {
-    transform: rotateY(-180deg) scale(0);
-  }
-}
-.flower__g-front__leaf-wrapper--5,
-.flower__g-front__leaf-wrapper--6 {
-  top: 2vmin;
-}
-.flower__g-front__leaf-wrapper--7,
-.flower__g-front__leaf-wrapper--8 {
-  top: 6.5vmin;
-}
-.flower__g-front__leaf-wrapper--2 {
-  -webkit-animation-delay: 5.2s !important;
-  animation-delay: 5.2s !important;
-}
-.flower__g-front__leaf-wrapper--3 {
-  -webkit-animation-delay: 4.9s !important;
-  animation-delay: 4.9s !important;
-}
-.flower__g-front__leaf-wrapper--5 {
-  -webkit-animation-delay: 4.3s !important;
-  animation-delay: 4.3s !important;
-}
-.flower__g-front__leaf-wrapper--6 {
-  -webkit-animation-delay: 4.1s !important;
-  animation-delay: 4.1s !important;
-}
-.flower__g-front__leaf-wrapper--7 {
-  -webkit-animation-delay: 3.8s !important;
-  animation-delay: 3.8s !important;
-}
-.flower__g-front__leaf-wrapper--8 {
-  -webkit-animation-delay: 3.5s !important;
-  animation-delay: 3.5s !important;
-}
-@-webkit-keyframes flower__g-front__leaf-ans {
-  0% {
-    transform: rotate(10deg) scale(0);
-  }
-}
-@keyframes flower__g-front__leaf-ans {
-  0% {
-    transform: rotate(10deg) scale(0);
-  }
-}
-@-webkit-keyframes flower__g-front__leaf-left-ans {
-  0% {
-    transform: rotateY(-180deg) rotate(5deg) scale(0);
-  }
-}
-@keyframes flower__g-front__leaf-left-ans {
-  0% {
-    transform: rotateY(-180deg) rotate(5deg) scale(0);
-  }
-}
-.flower__g-front__leaf {
-  width: 10vmin;
-  height: 10vmin;
-  border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
-  box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
-  background-image: linear-gradient(
-      to bottom left,
-      transparent,
-      var(--dark-color)
-    ),
-    linear-gradient(to bottom right, #159faa 50%, transparent 50%, transparent);
-  -webkit-mask-image: linear-gradient(
-    to bottom right,
-    #159faa 50%,
-    transparent 50%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to bottom right,
-    #159faa 50%,
-    transparent 50%,
-    transparent
-  );
-}
-.flower__g-fr {
-  position: absolute;
-  bottom: -4vmin;
-  left: vmin;
-  transform-origin: bottom left;
-  z-index: 10;
-  -webkit-animation: flower__g-fr-ans 2s linear infinite;
-  animation: flower__g-fr-ans 2s linear infinite;
-}
-@-webkit-keyframes flower__g-fr-ans {
-  0%,
-  100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-}
-@keyframes flower__g-fr-ans {
-  0%,
-  100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-}
-.flower__g-fr .leaf {
-  width: 30vmin;
-  height: 40vmin;
-  border-top-left-radius: 100%;
-  border-left: 2vmin solid #079097;
-  -webkit-mask-image: linear-gradient(to top, transparent 25%, #079097 50%);
-  position: relative;
-  z-index: 1;
-}
-.flower__g-fr__leaf {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10vmin;
-  height: 10vmin;
-  border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
-  box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
-  background-image: linear-gradient(
-      to bottom left,
-      transparent,
-      var(--dark-color) 98%
-    ),
-    linear-gradient(to bottom right, #23f0ff 45%, transparent 50%, transparent);
-  -webkit-mask-image: linear-gradient(
-    135deg,
-    #159faa 40%,
-    transparent 50%,
-    transparent
-  );
-}
-.flower__g-fr__leaf--1 {
-  left: 20vmin;
-  transform: rotate(45deg);
-  -webkit-animation: flower__g-fr-leaft-ans-1 0.5s 5.2s linear backwards;
-  animation: flower__g-fr-leaft-ans-1 0.5s 5.2s linear backwards;
-}
-@-webkit-keyframes flower__g-fr-leaft-ans-1 {
-  0% {
-    transform-origin: left;
-    transform: rotate(45deg) scale(0);
-  }
-}
-@keyframes flower__g-fr-leaft-ans-1 {
-  0% {
-    transform-origin: left;
-    transform: rotate(45deg) scale(0);
-  }
-}
-.flower__g-fr__leaf--2 {
-  left: 12vmin;
-  top: -7vmin;
-  transform: rotate(25deg) rotateY(-180deg);
-  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 5s linear backwards;
-  animation: flower__g-fr-leaft-ans-6 0.5s 5s linear backwards;
-}
-.flower__g-fr__leaf--3 {
-  left: 15vmin;
-  top: 6vmin;
-  transform: rotate(55deg);
-  -webkit-animation: flower__g-fr-leaft-ans-5 0.5s 4.8s linear backwards;
-  animation: flower__g-fr-leaft-ans-5 0.5s 4.8s linear backwards;
-}
-.flower__g-fr__leaf--4 {
-  left: 6vmin;
-  top: -2vmin;
-  transform: rotate(25deg) rotateY(-180deg);
-  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 4.6s linear backwards;
-  animation: flower__g-fr-leaft-ans-6 0.5s 4.6s linear backwards;
-}
-.flower__g-fr__leaf--5 {
-  left: 10vmin;
-  top: 14vmin;
-  transform: rotate(55deg);
-  -webkit-animation: flower__g-fr-leaft-ans-5 0.5s 4.4s linear backwards;
-  animation: flower__g-fr-leaft-ans-5 0.5s 4.4s linear backwards;
-}
-@-webkit-keyframes flower__g-fr-leaft-ans-5 {
-  0% {
-    transform-origin: left;
-    transform: rotate(55deg) scale(0);
-  }
-}
-@keyframes flower__g-fr-leaft-ans-5 {
-  0% {
-    transform-origin: left;
-    transform: rotate(55deg) scale(0);
-  }
-}
-.flower__g-fr__leaf--6 {
-  left: 0vmin;
-  top: 6vmin;
-  transform: rotate(25deg) rotateY(-180deg);
-  -webkit-animation: flower__g-fr-leaft-ans-6 0.5s 4.2s linear backwards;
-  animation: flower__g-fr-leaft-ans-6 0.5s 4.2s linear backwards;
-}
-@-webkit-keyframes flower__g-fr-leaft-ans-6 {
-  0% {
-    transform-origin: right;
-    transform: rotate(25deg) rotateY(-180deg) scale(0);
-  }
-}
-@keyframes flower__g-fr-leaft-ans-6 {
-  0% {
-    transform-origin: right;
-    transform: rotate(25deg) rotateY(-180deg) scale(0);
-  }
-}
-.flower__g-fr__leaf--7 {
-  left: 5vmin;
-  top: 22vmin;
-  transform: rotate(45deg);
-  -webkit-animation: flower__g-fr-leaft-ans-7 0.5s 4s linear backwards;
-  animation: flower__g-fr-leaft-ans-7 0.5s 4s linear backwards;
-}
-@-webkit-keyframes flower__g-fr-leaft-ans-7 {
-  0% {
-    transform-origin: left;
-    transform: rotate(45deg) scale(0);
-  }
-}
-@keyframes flower__g-fr-leaft-ans-7 {
-  0% {
-    transform-origin: left;
-    transform: rotate(45deg) scale(0);
-  }
-}
-.flower__g-fr__leaf--8 {
-  left: -4vmin;
-  top: 15vmin;
-  transform: rotate(15deg) rotateY(-180deg);
-  -webkit-animation: flower__g-fr-leaft-ans-8 0.5s 3.8s linear backwards;
-  animation: flower__g-fr-leaft-ans-8 0.5s 3.8s linear backwards;
-}
-@-webkit-keyframes flower__g-fr-leaft-ans-8 {
-  0% {
-    transform-origin: right;
-    transform: rotate(15deg) rotateY(-180deg) scale(0);
-  }
-}
-@keyframes flower__g-fr-leaft-ans-8 {
-  0% {
-    transform-origin: right;
-    transform: rotate(15deg) rotateY(-180deg) scale(0);
-  }
-}
-
-.long-g {
-  position: absolute;
-  bottom: 25vmin;
-  left: -42vmin;
-  transform-origin: bottom left;
-}
-.long-g--1 {
-  bottom: 0vmin;
-  transform: scale(0.8) rotate(-5deg);
-}
-.long-g--1 .leaf {
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 40%,
-    #079097 80%
-  ) !important;
-}
-.long-g--1 .leaf--1 {
-  --w: 5vmin;
-  --h: 30vmin;
-  left: -2vmin;
-  transform: rotate(3deg) rotateY(-180deg);
-}
-.long-g--2,
-.long-g--3 {
-  bottom: -3vmin;
-  left: -35vmin;
-  transform-origin: center;
-  transform: scale(0.6) rotateX(60deg);
-}
-.long-g--2 .leaf,
-.long-g--3 .leaf {
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 50%,
-    #079097 80%
-  ) !important;
-}
-.long-g--2 .leaf--1,
-.long-g--3 .leaf--1 {
-  left: -1vmin;
-  transform: rotateY(-180deg);
-}
-.long-g--3 {
-  left: -17vmin;
-  bottom: 0vmin;
-}
-.long-g--3 .leaf {
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 40%,
-    #079097 80%
-  ) !important;
-}
-.long-g--4 {
-  left: 25vmin;
-  bottom: -3vmin;
-  transform-origin: center;
-  transform: scale(0.6) rotateX(60deg);
-}
-.long-g--4 .leaf {
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 50%,
-    #079097 80%
-  ) !important;
-}
-.long-g--5 {
-  left: 42vmin;
-  bottom: 0vmin;
-  transform: scale(0.8) rotate(2deg);
-}
-.long-g--6 {
-  left: 0vmin;
-  bottom: -20vmin;
-  z-index: 100;
-  filter: blur(0.3vmin);
-  transform: scale(0.8) rotate(2deg);
-}
-.long-g--7 {
-  left: 35vmin;
-  bottom: 20vmin;
-  z-index: -1;
-  filter: blur(0.3vmin);
-  transform: scale(0.6) rotate(2deg);
-  opacity: 0.7;
-}
-.long-g .leaf {
-  --w: 15vmin;
-  --h: 20vmin;
-  --c: #079097;
-  position: absolute;
-  bottom: 0;
-  width: var(--w);
-  height: var(--h);
-  border-top-left-radius: 100%;
-  border-left: 2vmin solid var(--c);
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 20%,
-    var(--dark-color)
-  );
-  transform-origin: bottom center;
-}
-.long-g .leaf--0 {
-  left: 2vmin;
-  -webkit-animation: leaf-ans-1 4s linear infinite;
-  animation: leaf-ans-1 4s linear infinite;
-}
-.long-g .leaf--1 {
-  --w: 5vmin;
-  --h: 20vmin;
-  -webkit-animation: leaf-ans-1 4s linear infinite;
-  animation: leaf-ans-1 4s linear infinite;
-}
-.long-g .leaf--2 {
-  --w: 10vmin;
-  --h: 20vmin;
-  left: -0.5vmin;
-  bottom: 5vmin;
-  transform-origin: bottom left;
-  transform: rotateY(-180deg);
-  -webkit-animation: leaf-ans-2 3s linear infinite;
-  animation: leaf-ans-2 3s linear infinite;
-}
-.long-g .leaf--3 {
-  --w: 5vmin;
-  --h: 10vmin;
-  left: -1vmin;
-  bottom: 3.2vmin;
-  transform-origin: bottom left;
-  transform: rotate(-10deg) rotateY(-180deg);
-  -webkit-animation: leaf-ans-3 3s linear infinite;
-  animation: leaf-ans-3 3s linear infinite;
-}
-
-@-webkit-keyframes leaf-ans-1 {
-  0%,
-  100% {
-    transform: rotate(-5deg) scale(1);
-  }
-  50% {
-    transform: rotate(5deg) scale(1.1);
-  }
-}
-
-@keyframes leaf-ans-1 {
-  0%,
-  100% {
-    transform: rotate(-5deg) scale(1);
-  }
-  50% {
-    transform: rotate(5deg) scale(1.1);
-  }
-}
-@-webkit-keyframes leaf-ans-2 {
-  0%,
-  100% {
-    transform: rotateY(-180deg) rotate(5deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotate(0deg) scale(1.1);
-  }
-}
-@keyframes leaf-ans-2 {
-  0%,
-  100% {
-    transform: rotateY(-180deg) rotate(5deg);
-  }
-  50% {
-    transform: rotateY(-180deg) rotate(0deg) scale(1.1);
-  }
-}
-@-webkit-keyframes leaf-ans-3 {
-  0%,
-  100% {
-    transform: rotate(-10deg) rotateY(-180deg);
-  }
-  50% {
-    transform: rotate(-20deg) rotateY(-180deg);
-  }
-}
-@keyframes leaf-ans-3 {
-  0%,
-  100% {
-    transform: rotate(-10deg) rotateY(-180deg);
-  }
-  50% {
-    transform: rotate(-20deg) rotateY(-180deg);
-  }
-}
-.grow-ans {
-  -webkit-animation: grow-ans 2s var(--d) backwards;
-  animation: grow-ans 2s var(--d) backwards;
-}
-
-@-webkit-keyframes grow-ans {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-@keyframes grow-ans {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes light-ans {
-  0% {
-    opacity: 0;
-    transform: translateY(0vmin);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(-5vmin) translateX(-2vmin);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-15vmin) translateX(2vmin);
-    filter: blur(0.2vmin);
-  }
-  75% {
-    transform: translateY(-20vmin) translateX(-2vmin);
-    filter: blur(0.2vmin);
-  }
-  100% {
-    transform: translateY(-30vmin);
-    opacity: 0;
-    filter: blur(1vmin);
-  }
-}
-@keyframes light-ans {
-  0% {
-    opacity: 0;
-    transform: translateY(0vmin);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(-5vmin) translateX(-2vmin);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-15vmin) translateX(2vmin);
-    filter: blur(0.2vmin);
-  }
-  75% {
-    transform: translateY(-20vmin) translateX(-2vmin);
-    filter: blur(0.2vmin);
-  }
-  100% {
-    transform: translateY(-30vmin);
-    opacity: 0;
-    filter: blur(1vmin);
-  }
-}
-@-webkit-keyframes moving-flower-1 {
-  0%,
-  100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-}
-@keyframes moving-flower-1 {
-  0%,
-  100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-}
-@-webkit-keyframes moving-flower-2 {
-  0%,
-  100% {
-    transform: rotate(18deg);
-  }
-  50% {
-    transform: rotate(14deg);
-  }
-}
-@keyframes moving-flower-2 {
-  0%,
-  100% {
-    transform: rotate(18deg);
-  }
-  50% {
-    transform: rotate(14deg);
-  }
-}
-@-webkit-keyframes moving-flower-3 {
-  0%,
-  100% {
-    transform: rotate(-18deg);
-  }
-  50% {
-    transform: rotate(-20deg) rotateY(-10deg);
-  }
-}
-@keyframes moving-flower-3 {
-  0%,
-  100% {
-    transform: rotate(-18deg);
-  }
-  50% {
-    transform: rotate(-20deg) rotateY(-10deg);
-  }
-}
-@-webkit-keyframes blooming-leaf-right {
-  0% {
-    transform-origin: left;
-    transform: rotate(70deg) rotateY(30deg) scale(0);
-  }
-}
-@keyframes blooming-leaf-right {
-  0% {
-    transform-origin: left;
-    transform: rotate(70deg) rotateY(30deg) scale(0);
-  }
-}
-@-webkit-keyframes blooming-leaf-left {
-  0% {
-    transform-origin: right;
-    transform: rotate(-70deg) rotateY(30deg) scale(0);
-  }
-}
-@keyframes blooming-leaf-left {
-  0% {
-    transform-origin: right;
-    transform: rotate(-70deg) rotateY(30deg) scale(0);
-  }
-}
-@-webkit-keyframes grow-flower-tree {
-  0% {
-    height: 0;
-    border-radius: 1vmin;
-  }
-}
-@keyframes grow-flower-tree {
-  0% {
-    height: 0;
-    border-radius: 1vmin;
-  }
-}
-@-webkit-keyframes blooming-flower {
-  0% {
-    transform: scale(0);
-  }
-}
-@keyframes blooming-flower {
-  0% {
-    transform: scale(0);
-  }
-}
-@-webkit-keyframes moving-grass {
-  0%,
-  100% {
-    transform: rotate(-48deg) rotateY(40deg);
-  }
-  50% {
-    transform: rotate(-50deg) rotateY(40deg);
-  }
-}
-@keyframes moving-grass {
-  0%,
-  100% {
-    transform: rotate(-48deg) rotateY(40deg);
-  }
-  50% {
-    transform: rotate(-50deg) rotateY(40deg);
-  }
-}
-@-webkit-keyframes moving-grass--2 {
-  0%,
-  100% {
-    transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
-  }
-  50% {
-    transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
-  }
-}
-@keyframes moving-grass--2 {
-  0%,
-  100% {
-    transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
-  }
-  50% {
-    transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
-  }
-}
-.growing-grass {
-  -webkit-animation: growing-grass-ans 1s 2s backwards;
-  animation: growing-grass-ans 1s 2s backwards;
-}
-
-@-webkit-keyframes growing-grass-ans {
-  0% {
-    transform: scale(0);
-  }
-}
-
-@keyframes growing-grass-ans {
-  0% {
-    transform: scale(0);
-  }
-}
-.container * {
-  -webkit-animation-play-state: paused !important;
-  animation-play-state: paused !important;
-} 
-</style>
+    <title>Black & White Christmas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000000; font-family: 'Segoe UI', sans-serif; }
+        #canvas-container { width: 100%; height: 100vh; display: block; }
+        #ui-layer { position: absolute; bottom: 30px; width: 100%; text-align: center; pointer-events: none; z-index: 100; }
+        .badge { display: inline-block; background: rgba(0, 0, 0, 0.8); border: 2px solid #FFFFFF; color: #FFFFFF; padding: 10px 25px; border-radius: 50px; font-size: 18px; font-weight: bold; margin-bottom: 10px; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); text-shadow: 0 0 10px #FFFFFF; }
+        .guide { color: #bbb; font-size: 13px; margin-bottom: 20px; text-shadow: 0 2px 4px black; }
+        button { pointer-events: auto; cursor: pointer; background: linear-gradient(to bottom, #444444, #111111); color: #FFF; border: 2px solid #FFFFFF; padding: 15px 50px; border-radius: 30px; font-weight: 800; font-size: 16px; box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        #camera-preview { position: fixed; top: 12px; right: 12px; width: 160px; height: 120px; border-radius: 10px; overflow: hidden; border: 1.5px solid rgba(255, 255, 255, 0.6); box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); transform: scaleX(-1); opacity: 0.8; z-index: 200; pointer-events: none; background: #000; }
+    </style>
 </head>
-<body class="container">
-    <div class="night"></div>
-    <div class="text">
-        <div class="wrapper">
-            <div class="lid one"></div>
-            <div class="lid two"></div>
-            <div class="envelope"></div>
-            <div class="letter">
-                
-            </div>
+<body>
+    <div id="ui-layer">
+        <div id="status" class="badge">❄️ Merry Christmas ❄️</div>
+        <div class="guide">
+            🖐 <b>Xòe:</b> Bung Ảnh & Ánh Sáng &nbsp;|&nbsp; 👌 <b>Pinch:</b> Xem ảnh &nbsp;|&nbsp; ✊ <b>Nắm:</b> Thu cây
         </div>
-        <div class="buttons">
-            <button id="openBtn">Open</button>
-            <button id="closeBtn" style="display: none;">Close</button>
-        </div>
+        <button id="btnStart" onclick="startSystem()">Start</button>
     </div>
-    
-    <div class="flowers">
-      <div class="flower flower--1">
-        <div class="flower__leafs flower__leafs--1">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-          <div class="flower__line__leaf flower__line__leaf--5"></div>
-          <div class="flower__line__leaf flower__line__leaf--6"></div>
-        </div>
-      </div>
-  
-      <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-  
-      <div class="flower flower--3">
-        <div class="flower__leafs flower__leafs--3">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-  
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-  
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:1.2s">
-        <div class="flower__g-long">
-          <div class="flower__g-long__top"></div>
-          <div class="flower__g-long__bottom"></div>
-        </div>
-      </div>
-  
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--1">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-  
-      <div class="growing-grass">
-        <div class="flower__grass flower__grass--2">
-          <div class="flower__grass--top"></div>
-          <div class="flower__grass--bottom"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-          <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-          <div class="flower__grass__overlay"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.4s">
-        <div class="flower__g-right flower__g-right--1">
-          <div class="leaf"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.8s">
-        <div class="flower__g-right flower__g-right--2">
-          <div class="leaf"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:2.8s">
-        <div class="flower__g-front">
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
-            <div class="flower__g-front__leaf"></div>
-          </div>
-          <div class="flower__g-front__line"></div>
-        </div>
-      </div>
-  
-      <div class="grow-ans" style="--d:3.2s">
-        <div class="flower__g-fr">
-          <div class="leaf"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-          <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--0">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:2.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--1">
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.8s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--2">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--3">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--4">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--5">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--6">
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.8s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-  
-      <div class="long-g long-g--7">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.5s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
-      </div>
-    </div>
-    
-  <script>
-onload = () => {
-    document.body.classList.remove("container");
-  };
+    <div id="canvas-container"></div>
+    <video class="input_video" style="display:none"></video>
+    <canvas id="camera-preview"></canvas>
+    <script>
+        const loader = new THREE.TextureLoader();
+        
+        // 7 ảnh mới đẹp lung linh tông silver/monochrome (load ổn định 100%)
+        const photoUrls = [
+            "https://thumbs.dreamstime.com/b/modern-christmas-tree-minimalist-ornaments-monochrome-black-white-silver-featuring-geometric-shapes-sleek-design-336421966.jpg",
+            "https://s.alicdn.com/@sc02/kf/Ad9e9feb0aae7430bb0aef2703fe00f0bp.jpg",
+            "https://static.vecteezy.com/system/resources/thumbnails/050/626/710/small/black-christmas-ornaments-on-a-snowy-fir-tree-branch-photo.jpeg",
+            "https://t4.ftcdn.net/jpg/18/41/68/81/360_F_1841688100_u6RgTzCnN9zzlcIN7COeYP1IgSUjMXUU.jpg",
+            "https://blog.canadianloghomes.com/wp-content/uploads/2023/08/white-christmas-tree-ideas-1.jpg",
+            "https://hips.hearstapps.com/hmg-prod/images/best-white-christmas-tree-ideas-67043415b9327.png?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*",
+            "https://homesthetics.net/wp-content/uploads/2024/11/Black-and-White-Trees.jpg"
+        ];
 
-  const wrapper = document.querySelector(".wrapper");
-  const openBtn = document.getElementById("openBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  
-  openBtn.addEventListener("click", () => {
-      wrapper.classList.add("open");
-      openBtn.style.display = "none";
-      closeBtn.style.display = "inline-block";
-  });
-  
-  closeBtn.addEventListener("click", () => {
-      wrapper.classList.remove("open");
-      closeBtn.style.display = "none";
-      openBtn.style.display = "inline-block";
-  });
-  
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const openBtn = document.getElementById("openBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const wrapper = document.querySelector(".wrapper");
+        const photoTextures = photoUrls.map(url => loader.load(url));
 
-  // Tạo nút Phóng to
-  const zoomBtn = document.createElement("button");
-  zoomBtn.innerText = "Phóng to";
-  zoomBtn.style.cssText = `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 16px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #D43F5E;
-    color: white;
-    cursor: pointer;
-    z-index: 5;
-    transition: 0.3s;
-    display: none;
-  `;
-  wrapper.appendChild(zoomBtn);
-  console.log("✅ Nút phóng to đã được tạo!");
+        function createCustomTexture(type) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 128; canvas.height = 128;
+            const ctx = canvas.getContext('2d');
+            const cx = 64, cy = 64;
+            if (type === 'white_silver_glow') {
+                const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 50);
+                grd.addColorStop(0, '#FFFFFF');
+                grd.addColorStop(0.3, '#EEEEEE');
+                grd.addColorStop(0.6, '#AAAAAA');
+                grd.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = grd; ctx.fillRect(0, 0, 128, 128);
+            } else if (type === 'dark_glow') {
+                const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 50);
+                grd.addColorStop(0, '#AAAAAA');
+                grd.addColorStop(0.4, '#555555');
+                grd.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = grd; ctx.fillRect(0, 0, 128, 128);
+            } else if (type === 'bw_gift') {
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(20, 20, 88, 88);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(54, 20, 20, 88);
+                ctx.fillRect(20, 54, 88, 20);
+                ctx.strokeStyle = "#FFFFFF"; ctx.lineWidth = 3; ctx.strokeRect(20, 20, 88, 88);
+            } else if (type === 'silver_star') {
+                const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 60);
+                grd.addColorStop(0, '#FFFFFF');
+                grd.addColorStop(0.4, '#DDDDDD');
+                grd.addColorStop(0.8, '#888888');
+                grd.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.fillStyle = grd; ctx.fillRect(0, 0, 128, 128);
+            }
+            return new THREE.CanvasTexture(canvas);
+        }
 
-  const modal = document.createElement("div");
-  modal.style.cssText = `
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-    background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;
-  `;
-  const modalContent = document.createElement("div");
-  modalContent.style.cssText = `
-    background:#fff; color:#d43f5e; padding:25px; border-radius:20px; 
-    max-width:80%; max-height:80%; overflow:auto; text-align:center; font-size:22px;
-    box-shadow:0 0 20px rgba(255,255,255,0.3);
-  `;
-  modalContent.innerHTML = `
-    
-  `;
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
+        const textures = {
+            white: createCustomTexture('white_silver_glow'),
+            dark: createCustomTexture('dark_glow'),
+            gift: createCustomTexture('bw_gift'),
+            star: createCustomTexture('silver_star')
+        };
 
-  openBtn.addEventListener("click", () => {
-    document.querySelector(".container").classList.add("open");
-    openBtn.style.display = "none";
-    closeBtn.style.display = "inline-block";
-    zoomBtn.style.display = "inline-block"; // Hiện nút khi thư mở
-    console.log("📬 Thư mở, nút phóng to hiển thị!");
-  });
+        const CONFIG = {
+            whiteCount: 2200,
+            darkCount: 500,
+            giftCount: 200,
+            explodeRadius: 65,
+            photoOrbitRadius: 25,
+            treeHeight: 70,
+            treeBaseRadius: 35
+        };
 
-  closeBtn.addEventListener("click", () => {
-    document.querySelector(".container").classList.remove("open");
-    closeBtn.style.display = "none";
-    openBtn.style.display = "inline-block";
-    zoomBtn.style.display = "none";
-  });
+        let scene, camera, renderer;
+        let groupWhite, groupDark, groupGift;
+        let photoMeshes = [];
+        let titleMesh, starMesh;
+        let state = 'TREE';
+        let selectedIndex = 0;
+        let handX = 0.5;
 
-  zoomBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
-  });
+        function init3D() {
+            const container = document.getElementById('canvas-container');
+            scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x000000, 0.003);
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 100;
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const openBtn = document.getElementById("openBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const wrapper = document.querySelector(".wrapper") || document.querySelector(".container");
+            groupWhite = createParticleSystem('white', CONFIG.whiteCount, 2.2);
+            groupDark = createParticleSystem('dark', CONFIG.darkCount, 3.0);
+            groupGift = createParticleSystem('gift', CONFIG.giftCount, 3.5);
 
-  if (!wrapper) {
-    alert("❌ Không tìm thấy .wrapper hoặc .container để gắn nút phóng to!");
-    return;
-  }
+            createPhotos();
+            createDecorations();
+            animate();
+        }
 
-  // Tạo nút Phóng to
-  const zoomBtn = document.createElement("button");
-  zoomBtn.innerText = "Phóng to";
-  zoomBtn.style.cssText = `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 16px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #D43F5E;
-    color: white;
-    cursor: pointer;
-    z-index: 5;
-    transition: 0.3s;
-    display: none;
-  `;
-  wrapper.appendChild(zoomBtn);
-  console.log("✅ Nút Phóng to đã được chèn vào DOM");
+        function createParticleSystem(type, count, size) {
+            const positions = new Float32Array(count * 3);
+            const treeTargets = new Float32Array(count * 3);
+            const explodeTargets = new Float32Array(count * 3);
+            for (let i = 0; i < count; i++) {
+                const i3 = i * 3;
+                const h = Math.random() * CONFIG.treeHeight;
+                const y = h - CONFIG.treeHeight / 2;
+                const maxR = (1 - h / CONFIG.treeHeight) * CONFIG.treeBaseRadius;
+                const r = maxR * (type === 'white' ? Math.sqrt(Math.random()) : 0.9 + Math.random() * 0.1);
+                const theta = Math.random() * Math.PI * 2;
+                const x = r * Math.cos(theta);
+                const z = r * Math.sin(theta);
+                positions[i3] = x; positions[i3 + 1] = y; positions[i3 + 2] = z;
+                treeTargets[i3] = x; treeTargets[i3 + 1] = y; treeTargets[i3 + 2] = z;
 
-  // Modal
-  const modal = document.createElement("div");
-  modal.style.cssText = `
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-    background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;
-  `;
-  const modalContent = document.createElement("div");
-  modalContent.style.cssText = `
-    background:#fff; color:#d43f5e; padding:25px; border-radius:20px; 
-    max-width:80%; max-height:80%; overflow:auto; text-align:center; font-size:22px;
-    box-shadow:0 0 20px rgba(255,255,255,0.3);
-    white-space:pre-line;
-  `;
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
+                const u = Math.random(); const v = Math.random();
+                const phi = Math.acos(2 * v - 1); const lam = 2 * Math.PI * u;
+                const rad = CONFIG.explodeRadius * Math.cbrt(Math.random()) * (type === 'gift' ? 1.2 : 1.0);
+                explodeTargets[i3] = rad * Math.sin(phi) * Math.cos(lam);
+                explodeTargets[i3 + 1] = rad * Math.sin(phi) * Math.sin(lam);
+                explodeTargets[i3 + 2] = rad * Math.cos(phi);
+            }
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.userData = { tree: treeTargets, explode: explodeTargets };
+            const material = new THREE.PointsMaterial({
+                size: size,
+                map: textures[type],
+                transparent: true,
+                opacity: 1.0,
+                blending: type === 'gift' ? THREE.NormalBlending : THREE.AdditiveBlending,
+                depthWrite: false,
+                sizeAttenuation: true
+            });
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+            return points;
+        }
 
-  openBtn.addEventListener("click", () => {
-    document.querySelector(".container").classList.add("open");
-    openBtn.style.display = "none";
-    closeBtn.style.display = "inline-block";
-    zoomBtn.style.display = "inline-block";
-    console.log("📬 Thư mở, hiện nút Phóng to");
-  });
+        function createPhotos() {
+            const geo = new THREE.PlaneGeometry(8, 8);
+            const borderGeo = new THREE.PlaneGeometry(9, 9);
+            const borderMat = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
 
-  closeBtn.addEventListener("click", () => {
-    document.querySelector(".container").classList.remove("open");
-    closeBtn.style.display = "none";
-    openBtn.style.display = "inline-block";
-    zoomBtn.style.display = "none";
-  });
+            for (let i = 0; i < 7; i++) {
+                const mat = new THREE.MeshBasicMaterial({
+                    map: photoTextures[i],
+                    side: THREE.DoubleSide
+                });
+                const mesh = new THREE.Mesh(geo, mat);
+                const border = new THREE.Mesh(borderGeo, borderMat);
+                border.position.z = -0.1;
+                mesh.add(border);
+                mesh.visible = false;
+                mesh.scale.set(0, 0, 0);
+                scene.add(mesh);
+                photoMeshes.push(mesh);
+            }
+        }
 
-  // Khi bấm Phóng to → hiện thư gõ chữ
-  zoomBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
-    const fullText = `❤️ Chúc mừng ngày nhà giáo Việt Nam 20/11 ❤️
+        function createDecorations() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1024; canvas.height = 256;
+            const ctx = canvas.getContext('2d');
+            ctx.font = 'bold italic 90px "Times New Roman"';
+            ctx.fillStyle = '#FFFFFF'; ctx.textAlign = 'center';
+            ctx.shadowColor = "#AAAAAA"; ctx.shadowBlur = 60;
+            ctx.fillText("MERRY CHRISTMAS", 512, 130);
+            const tex = new THREE.CanvasTexture(canvas);
+            const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, blending: THREE.AdditiveBlending });
+            titleMesh = new THREE.Mesh(new THREE.PlaneGeometry(60, 15), mat);
+            titleMesh.position.set(0, 50, 0);
+            scene.add(titleMesh);
 
-“Kính chúc cô Nguyễn Thị Duyên  của tụi em luôn trẻ đẹp, vui vẻ và hạnh phúc ạ! Cảm ơn cô đã dạy tụi em không chỉ kiến thức mà còn cả cách yêu thương cuộc sống. Tụi em yêu cô nhiều lắm ạ! 💐❤️”
+            starMesh = new THREE.Mesh(new THREE.PlaneGeometry(18, 18), new THREE.MeshBasicMaterial({ map: textures.star, transparent: true, blending: THREE.AdditiveBlending }));
+            starMesh.position.set(0, CONFIG.treeHeight / 2 + 6, 0);
+            scene.add(starMesh);
+        }
 
-    modalContent.innerHTML = "<span id='typing'></span><span id='cursor'>|</span>";
-    const typingEl = modalContent.querySelector("#typing");
-    const cursor = modalContent.querySelector("#cursor");
+        function updateParticleGroup(group, targetState, speed, handRotY) {
+            const pos = group.geometry.attributes.position.array;
+            const targets = group.geometry.userData[targetState === 'TREE' ? 'tree' : 'explode'];
+            for (let i = 0; i < pos.length; i++) {
+                pos[i] += (targets[i] - pos[i]) * speed;
+            }
+            group.geometry.attributes.position.needsUpdate = true;
+            if (targetState === 'TREE') group.rotation.y += 0.003;
+            else group.rotation.y += (handRotY - group.rotation.y) * 0.05;
+        }
 
-    let i = 0;
-    function type() {
-      if (i < fullText.length) {
-        typingEl.innerHTML += fullText.charAt(i);
-        i++;
-        setTimeout(type, 40);
-      } else {
-        cursor.style.display = "none";
-      }
-    }
-    type();
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = Date.now() * 0.001;
+            const speed = 0.06;
+            const handRotY = (handX - 0.5) * 2.5;
 
-    setInterval(() => {
-      cursor.style.visibility = cursor.style.visibility === "hidden" ? "visible" : "hidden";
-    }, 400);
-  });
+            updateParticleGroup(groupWhite, state, speed, handRotY);
+            updateParticleGroup(groupDark, state, speed, handRotY);
+            updateParticleGroup(groupGift, state, speed, handRotY);
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Thử tìm một trong các khung có thể chứa thư
-  const possibleWrappers = [".wrapper", ".container", ".envelope", ".mail"];
-  let wrapper = null;
-  for (const sel of possibleWrappers) {
-    const el = document.querySelector(sel);
-    if (el) {
-      wrapper = el;
-      console.log("✅ Đã tìm thấy phần thư:", sel);
-      break;
-    }
-  }
+            if (state === 'TREE') {
+                titleMesh.visible = true; starMesh.visible = true; starMesh.rotation.z -= 0.02;
+                photoMeshes.forEach(m => { m.visible = false; m.scale.lerp(new THREE.Vector3(0,0,0), 0.1); });
+            } else {
+                titleMesh.visible = false; starMesh.visible = false;
+                if (state === 'EXPLODE') {
+                    const baseAngle = groupWhite.rotation.y;
+                    let bestIdx = 0, maxZ = -999;
+                    photoMeshes.forEach((mesh, i) => {
+                        mesh.visible = true;
+                        const angle = baseAngle + i * (Math.PI * 2 / photoMeshes.length);
+                        const x = Math.sin(angle) * CONFIG.photoOrbitRadius;
+                        const z = Math.cos(angle) * CONFIG.photoOrbitRadius;
+                        const y = Math.sin(time + i) * 3;
+                        mesh.position.lerp(new THREE.Vector3(x, y, z), 0.1);
+                        mesh.lookAt(camera.position);
+                        if (z > maxZ) { maxZ = z; bestIdx = i; }
+                        const scale = z > 5 ? 1 + z / CONFIG.photoOrbitRadius * 0.8 : 0.6;
+                        mesh.scale.lerp(new THREE.Vector3(scale, scale, scale), 0.1);
+                    });
+                    selectedIndex = bestIdx;
+                } else if (state === 'PHOTO') {
+                    photoMeshes.forEach((mesh, i) => {
+                        if (i === selectedIndex) {
+                            mesh.position.lerp(new THREE.Vector3(0, 0, 60), 0.1);
+                            mesh.scale.lerp(new THREE.Vector3(5, 5, 5), 0.1);
+                            mesh.lookAt(camera.position);
+                        } else mesh.scale.lerp(new THREE.Vector3(0, 0, 0), 0.1);
+                    });
+                }
+            }
+            renderer.render(scene, camera);
+        }
 
-  if (!wrapper) {
-    alert("❌ Không tìm thấy phần chứa thư (.wrapper / .container / .envelope / .mail)");
-    return;
-  }
+        function startSystem() {
+            document.getElementById('btnStart').style.display = 'none';
+            init3D();
 
-  // Tạo nút Phóng to
-  const zoomBtn = document.createElement("button");
-  zoomBtn.innerText = "Phóng to";
-  zoomBtn.style.cssText = `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 16px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    background-color: #D43F5E;
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-    display: none;
-  `;
-  wrapper.appendChild(zoomBtn);
+            const video = document.getElementsByClassName('input_video')[0];
+            const canvasPreview = document.getElementById('camera-preview');
+            const ctx = canvasPreview.getContext('2d');
+            const statusDiv = document.getElementById('status');
 
-  const openBtn = document.getElementById("openBtn");
-  const closeBtn = document.getElementById("closeBtn");
+            const hands = new Hands({locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`});
+            hands.setOptions({
+                maxNumHands: 1,
+                modelComplexity: 0,
+                minDetectionConfidence: 0.6,
+                minTrackingConfidence: 0.6
+            });
 
-  // Modal hiển thị thư
-  const modal = document.createElement("div");
-  modal.style.cssText = `
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-    background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;
-  `;
-  const modalContent = document.createElement("div");
-  modalContent.style.cssText = `
-    background:#fff; color:#d43f5e; padding:25px; border-radius:20px; 
-    max-width:80%; max-height:80%; overflow:auto; text-align:center; font-size:22px;
-    white-space:pre-line;
-  `;
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
+            hands.onResults(results => {
+                ctx.clearRect(0, 0, canvasPreview.width, canvasPreview.height);
+                ctx.drawImage(results.image, 0, 0, canvasPreview.width, canvasPreview.height);
 
-  // Khi bấm Open
-  openBtn.addEventListener("click", () => {
-    document.querySelector(".container")?.classList.add("open");
-    openBtn.style.display = "none";
-    closeBtn.style.display = "inline-block";
-    zoomBtn.style.display = "inline-block";
-  });
+                if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
+                    const lm = results.multiHandLandmarks[0];
+                    handX = lm[9].x;
+                    const tips = [8, 12, 16, 20];
+                    const wrist = lm[0];
+                    let openDist = 0;
+                    tips.forEach(i => openDist += Math.hypot(lm[i].x - wrist.x, lm[i].y - wrist.y));
+                    const avgDist = openDist / 4;
+                    const pinchDist = Math.hypot(lm[4].x - lm[8].x, lm[4].y - lm[8].y);
 
-  // Khi bấm Close
-  closeBtn.addEventListener("click", () => {
-    document.querySelector(".container")?.classList.remove("open");
-    closeBtn.style.display = "none";
-    openBtn.style.display = "inline-block";
-    zoomBtn.style.display = "none";
-  });
+                    if (avgDist < 0.25) {
+                        state = 'TREE';
+                        statusDiv.innerText = "✊ Thu Cây Bạc";
+                        statusDiv.style.color = "#FFFFFF";
+                    } else if (pinchDist < 0.05) {
+                        state = 'PHOTO';
+                        statusDiv.innerText = "👌 Xem Ảnh";
+                        statusDiv.style.color = "#CCCCCC";
+                    } else {
+                        state = 'EXPLODE';
+                        statusDiv.innerText = "🖐 Bung Ảnh & Ánh Sáng";
+                        statusDiv.style.color = "#888888";
+                    }
+                } else {
+                    state = 'TREE';
+                    statusDiv.innerText = "❄️ Merry Christmas ❄️";
+                    statusDiv.style.color = "#FFFFFF";
+                }
+            });
 
-  // Khi bấm Phóng to
-  zoomBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
-    const fullText = `❤️ Nhân dịp ngày nhà giáo Việt Nam 20/11 ❤️
+            const cameraUtils = new Camera(video, {
+                onFrame: async () => await hands.send({image: video}),
+                width: 640,
+                height: 480
+            });
+            cameraUtils.start();
+        }
 
-    Kính chúc cô Nguyễn Thị Duyên – vị thầy thuốc của trái tim và kiến thức – luôn mạnh khỏe, tràn đầy năng lượng để tiếp tục sứ mệnh cao cả. Ngày Nhà giáo Việt Nam, chúc cô mãi là nguồn cảm hứng cho mọi người! 💐"
-
-Chúc cô Nguyễn Thị Duyên của tụi em luôn trẻ đẹp, vui vẻ và hạnh phúc ạ! Cảm ơn cô đã dạy tụi em không chỉ kiến thức mà còn cả cách yêu thương cuộc sống. Tụi em yêu cô nhiều lắm ạ! 💐❤️`;
-
-    modalContent.innerHTML = "<span id='typing'></span><span id='cursor'>|</span>";
-    const typingEl = modalContent.querySelector("#typing");
-    const cursor = modalContent.querySelector("#cursor");
-    let i = 0;
-    function type() {
-      if (i < fullText.length) {
-        typingEl.innerHTML += fullText.charAt(i);
-        i++;
-        setTimeout(type, 40);
-      } else {
-        cursor.style.display = "none";
-      }
-    }
-    type();
-    setInterval(() => {
-      cursor.style.visibility = cursor.style.visibility === "hidden" ? "visible" : "hidden";
-    }, 400);
-  });
-
-  // Đóng modal
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-</script>
-<script>
-// 🌸 GIAI ĐOẠN MỞ ĐẦU: MẬT KHẨU + HỘP QUÀ
-window.addEventListener("load", function() {
-  // Ẩn phần phong bì trước
-  const envelope = document.querySelector(".container");
-  if (envelope) envelope.style.display = "none";
-
-  // Tạo phần mở đầu (mật khẩu + hộp quà)
-  const introHTML = `
-    <div id="introScreen" style="position:fixed; top:0; left:0; width:100%; height:100%;
-      background:linear-gradient(135deg,#ffb6c1,#ff69b4); display:flex; justify-content:center; align-items:center; z-index:99999;">
-      <div class="password-box" id="passwordScreen" style="background:#fff; padding:30px; border-radius:15px;
-        text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.2);">
-        <h2 style="color:#d43f5e;">🔒 Nhập pass đi người đẹp </h2>
-        <input type="password" id="passwordInput" placeholder="Nhập mật khẩu..."
-          style="padding:10px;font-size:18px;border-radius:8px;border:2px solid #ff69b4;text-align:center;">
-        <div id="message" style="color:red;margin-top:10px;height:20px;"></div>
-        <button id="unlockBtn" style="background:#ff69b4;border:none;color:white;padding:10px 18px;
-          border-radius:10px;margin:8px;cursor:pointer;font-size:16px;">Mở khóa</button>
-      </div>
-
-      <div class="gift-box" id="giftScreen" style="display:none;background:#fff;padding:30px;border-radius:15px;
-        text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.2);">
-        <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="Gift"
-          style="width:80px;margin-bottom:15px;">
-        <h2 style="color:#d43f5e;">Nhân dịp 20/11, tụi em có một món quà muốn tặng cô 🎁 cô có muốn nhận không ? </h2>
-        <div>
-          <button id="yesBtn" style="background:#ff69b4;border:none;color:white;padding:10px 18px;
-            border-radius:10px;margin:8px;cursor:pointer;font-size:16px;">Có</button>
-          <button id="noBtn" style="background:#ff69b4;border:none;color:white;padding:10px 18px;
-            border-radius:10px;margin:8px;cursor:pointer;font-size:16px;">Không</button>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.insertAdjacentHTML("beforeend", introHTML);
-
-  const passwordScreen = document.getElementById("passwordScreen");
-  const giftScreen = document.getElementById("giftScreen");
-  const unlockBtn = document.getElementById("unlockBtn");
-  const passwordInput = document.getElementById("passwordInput");
-  const message = document.getElementById("message");
-  const introScreen = document.getElementById("introScreen");
-
-  // Kiểm tra mật khẩu
-  unlockBtn.addEventListener("click", () => {
-    if (passwordInput.value.trim() === "2011") {
-      message.style.color = "green";
-      message.textContent = "Chính xác! 🎉";
-      setTimeout(() => {
-        passwordScreen.style.display = "none";
-        giftScreen.style.display = "block";
-      }, 700);
-    } else {
-      message.style.color = "red";
-      message.textContent = "Sai mật khẩu!";
-      passwordInput.value = "";
-    }
-  });
-
-  // Nút "Không" chạy trốn 😆
-  const noBtn = document.getElementById("noBtn");
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-    noBtn.style.position = "absolute";
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-  });
-
-  // Nút "Có" -> mở phong bì
-  const yesBtn = document.getElementById("yesBtn");
-  yesBtn.addEventListener("click", () => {
-    introScreen.style.transition = "opacity 1s ease";
-    introScreen.style.opacity = "0";
-    setTimeout(() => {
-      introScreen.remove();
-      if (envelope) envelope.style.display = "block";
-      document.body.style.background = "linear-gradient(180deg, #ffb6c1, #fff0f5)";
-    }, 1000);
-  });
-});
-</script>
-
+        window.addEventListener('resize', () => {
+            if (camera) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+    </script>
 </body>
 </html>
-
-<style>
-.fixed-next {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-    animation: pulse 2 2s infinite;
-}
-.fixed-next button {
-    padding: 18px 50px;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(45deg, #ff0844, #ffb199);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(255,8,68,0.6);
-}
-@keyframes pulse2 {
-    0% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.05); }
-    100% { transform: translateX(-50%) scale(1); }
-}
-</style>
-
-<div class="fixed-next">
-    <button onclick="window.location.href='https://panbap.github.io/galaxylovex/index.html?id=aHR0cHM6Ly9pLmliYi5jby9Ga3lyUmhQbS9uaC1jaC1wLW0tbi1oLW5oLTIwMjUtMTEtMjAtMDcxNTU1LnBuZyxodHRwczovL2kuaWJiLmNvL0ZreXJSaFBtL25oLWNoLXAtbS1uLWgtbmgtMjAyNS0xMS0yMC0wNzE1NTUucG5nLGh0dHBzOi8vaS5pYmIuY28vVEIyOERQZzgvbmgtY2gtcC1tLW4taC1uaC0yMDI1LTExLTIwLTA3MTcyMS5wbmcsaHR0cHM6Ly9pLmliYi5jby9XcFYzd1JKbi9uaC1jaC1wLW0tbi1oLW5oLTIwMjUtMTEtMjAtMDcxNTQ2LnBuZw==&texts=Q2jDumMgTeG7q25nIE5nw6B5IE5ow6AgR2nDoW8gVmnhu4d0IE5hbSAyMC8xMSxHYWxheHksTG92ZQ==&music=t.mp3'">
-        Next
-    </button>
-</div>
